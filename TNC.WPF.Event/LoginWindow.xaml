@@ -1,0 +1,94 @@
+﻿<Window x:Class="TNC.WPF.Event.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"     
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"    
+        mc:Ignorable="d"
+        Title="Телеком Нева Связь"
+        Height="450"
+        Width="400"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Icon="/Resources/image.ico">
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+            <TextBlock Text="Телеком Нева Связь"
+                       FontSize="20"
+                       HorizontalAlignment="Center"
+                       Margin="5"/>
+            <Image Margin="5" Source="/Resources/logo.jpg"
+                   Width="200" Height="150" Stretch="Uniform"/>
+
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center">
+                <TextBlock Text="Номер" Margin="5"/>
+                <TextBox Height="20"
+                         Width="100"
+                         Margin="5"
+                         RenderTransformOrigin="0.5,0.5"
+                         Name="NumberBox">
+                    <TextBox.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleX="2.524"/>
+                            <RotateTransform/>
+                            <TranslateTransform X="0.441"/>
+                        </TransformGroup>
+                    </TextBox.RenderTransform>
+                </TextBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                <TextBlock Text="Пароль" Margin="5"/>
+                <PasswordBox Name="Password"
+                         Height="20"
+                         Width="100"
+                         Margin="5"
+                         IsEnabled="False"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                <TextBlock Text="Код" Margin="0 5 25 0"/>
+                <TextBox Height="20"
+                         Width="70" 
+                         Margin="5"
+                         IsEnabled="False"
+                         Name="CodeBox"/>
+
+                <Button Height="20" Background="Transparent" IsEnabled="False" Name="RefreshBtn" Click="RefreshBtn_Click">
+                    <Image Source="/Resources/refresh.jpg" Stretch="Uniform" Width="20" Height="17"/>
+                </Button>
+
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal"
+                        Margin="20"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        >
+                <Button Margin="5"
+                        Width="100"
+                        Height="30"
+                        Name="ClearBtn" Click="ClearBtn_Click"
+                        >Отмена</Button>
+                <Button Margin="5"
+                        Width="100"
+                        Height="30"
+                        IsEnabled="False"
+                        Name="LoginBtn"
+                        Click="Enter_Click"
+                        >Вход</Button>
+                <Button Name="Enter" IsDefault="True" Click="Enter_Click" Width="0.1" Height="0.1"/>
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+
+</Window>
